@@ -14,12 +14,12 @@ import Profile from "./pages/Profile";
 function Router() {
   return (
     <Switch>
-      <Route path={\"/\"} component={Home} />
-      <Route path={\"/detail/:id\"} component={Detail} />
-      <Route path={\"/play/:id\"} component={Play} />
-      <Route path={\"/login\"} component={Login} />
-      <Route path={\"/profile\"} component={Profile} />
-      <Route path={\"/404\"} component={NotFound} />
+      <Route path="/" component={Home} />
+      <Route path="/detail/:id" component={Detail} />
+      <Route path="/play/:id" component={Play} />
+      <Route path="/login" component={Login} />
+      <Route path="/profile" component={Profile} />
+      <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
