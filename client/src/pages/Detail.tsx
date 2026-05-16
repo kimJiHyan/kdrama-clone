@@ -26,7 +26,7 @@ const dramaDetails = {
     votes: 125000,
     category: "爱情",
     duration: 60,
-    episodes: 16,
+    episodeCount: 16,
     status: "已完结",
     director: "李应福",
     cast: ["宋仲基", "宋慧乔", "金智媛", "李晟敏"],
@@ -35,7 +35,7 @@ const dramaDetails = {
     longDescription:
       "这部剧以其精良的制作、紧凑的剧情和演员的精彩表演赢得了广泛的关注。宋仲基和宋慧乔的荧屏搭档得到了观众的一致好评，剧中的爱情线和冒险元素完美结合，创造了一个令人难忘的故事。该剧在韩国、中国和其他亚洲国家都取得了巨大的成功。",
     image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663665037121/jtPpyBaLJQSmp3LR4WETUG/kdrama-featured-poster-MP6JgbM23Usvc6YHP87hZc.webp",
-    episodes: [
+    episodeList: [
       { ep: 1, title: "第一集", duration: 60 },
       { ep: 2, title: "第二集", duration: 60 },
       { ep: 3, title: "第三集", duration: 60 },
@@ -149,7 +149,7 @@ export default function Detail() {
                 <Users className="h-5 w-5 text-slate-400" />
                 <div>
                   <p className="text-sm text-slate-400">总集数</p>
-                  <p className="font-semibold text-white">{drama.episodes}集</p>
+                  <p className="font-semibold text-white">{drama.episodeCount}集</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -258,7 +258,7 @@ export default function Detail() {
                   </div>
                   <div>
                     <p className="text-sm text-slate-400">总集数</p>
-                    <p className="font-semibold text-white">{drama.episodes}集</p>
+                    <p className="font-semibold text-white">{drama.episodeCount}集</p>
                   </div>
                 </div>
               </div>
@@ -277,7 +277,7 @@ export default function Detail() {
 
           <TabsContent value="episodes" className="mt-6">
             <div className="grid gap-3">
-              {drama.episodes.map((ep) => (
+              {drama.episodeList.map((ep) => (
                 <Card
                   key={ep.ep}
                   className="cursor-pointer bg-slate-800/50 border-slate-700 transition-all hover:bg-slate-700/50"
