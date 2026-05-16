@@ -5,11 +5,12 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development tsx watch server/_core/index.ts",
-    "build": "vite build && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "build": "vite build && esbuild server/_core/index.ts --platform=node --bundle --format=esm --outdir=dist --external:express --external:@trpc/server --external:@trpc/server/adapters/express --external:mysql2 --external:drizzle-orm --external:drizzle-orm/mysql2/node --external:mysql2/promise --external:drizzle-orm/mysql-core",
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
+    "copy:node_modules": "cp -r node_modules dist/node_modules",
     "db:push": "drizzle-kit generate && drizzle-kit migrate",
     "test": "vitest run"
   },
