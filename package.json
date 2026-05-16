@@ -4,15 +4,12 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_ENV=development tsx watch server/_core/index.ts",
-    "start:local": "NODE_ENV=production tsx server/_core/index.ts",
-    "build": "vite build && cp -r server dist/ && cp package.json dist/ && echo \"#!/usr/bin/env node\nrequire('tsx/cjs').register();require('./server/_core/index.ts');\" > dist/index.js && chmod +x dist/index.js",
+    "dev": "vite --host",
+    "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
-    "format": "prettier --write .",
-    "db:push": "drizzle-kit generate && drizzle-kit migrate",
-    "test": "vitest run"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
