@@ -1,4 +1,4 @@
-import "dotenv/config";
+// dotenv is automatically loaded by the platform
 import express from "express";
 import { createServer } from "http";
 import path from "path";
