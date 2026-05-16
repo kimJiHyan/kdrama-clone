@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development tsx watch server/_core/index.ts",
-    "start:local": "NODE_ENV=production tsx dist/server/_core/index.ts",
-    "build": "vite build && cp -r server dist/ && cp package.json dist/ && cp dist/server/index.js dist/index.js",
+    "start:local": "NODE_ENV=production tsx server/_core/index.ts",
+    "build": "vite build && cp -r server dist/ && cp package.json dist/ && echo \"#!/usr/bin/env node\nrequire('tsx/cjs').register();require('./server/_core/index.ts');\" > dist/index.js && chmod +x dist/index.js",
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
