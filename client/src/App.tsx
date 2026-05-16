@@ -9,6 +9,7 @@ import Detail from "./pages/Detail";
 import Play from "./pages/Play";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
+import AdminDashboard from "./pages/AdminDashboard";
 
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/play/:id" component={Play} />
       <Route path="/login" component={Login} />
       <Route path="/profile" component={Profile} />
+      <Route path="/admin" component={AdminDashboard} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
